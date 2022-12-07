@@ -2,6 +2,7 @@
 #include "RectangleCollider.h"
 #include "PlayerController.h"
 #include "ColliderColorChanger.h"
+#include "System_Common.h"
 #include <vector>
 
 class GameObject
@@ -52,6 +53,8 @@ public:
 	PlayerController* createController(PlayerController *c);
 
 	void Update();
+
+	Tungine::string PrintObject(int id);
 
 protected:
 	float height;

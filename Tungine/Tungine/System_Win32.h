@@ -6,12 +6,15 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 #include "System_Common.h"
-
+#include <sstream>
 namespace Tungine
 {
 
 	const Tungine::string error = L"do not press k!";
 	const Tungine::string errorGameObject = L"Too many game objects";
+
+	
+
 
 	class System_Win32 : public System
 	{

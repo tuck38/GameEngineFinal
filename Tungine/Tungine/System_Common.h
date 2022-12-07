@@ -17,6 +17,12 @@ namespace Tungine
 		typedef std::wstring string;
 	#endif
 
+	Tungine::string ConvertStream(std::stringstream& ss)
+	{
+		std::string temp = ss.str();
+		Tungine::string result(temp.begin(), temp.end());
+		return result;
+	}
 	class System
 	{
 

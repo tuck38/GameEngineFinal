@@ -1,5 +1,6 @@
 #include "GameObject.h"
-
+#include <string>
+#include <sstream>
 void GameObject::Update()
 {
 	if (controller != nullptr)
@@ -68,3 +69,42 @@ ColliderColorChange* GameObject::createColorChanger()
 {
 	return colorChanger = new ColliderColorChange(renderer->getDefaultColor());
 }*/
+
+Tungine::string GameObject::PrintObject(int id)//pass the object's place in World::gameobjects
+{
+	//[Obj ID], [compID] [parameters], [compID], [compID],
+	//ex: 1, 0 [20.0 40.0 0.0], 1 [40.0 60.0 255 255 255], 2,
+	// 0 - transform [x y z] 1 - renderer [width height r g b] 2 - collider
+
+	Tungine::string result;
+
+	std::stringstream f;
+
+	f << id << ", ";
+	//result.append(id + L", ");
+
+	//transform
+	//result.append(L"0 [" + transform.getX() + L" " + transform.getY() + L" " + transform.getZ() + L"], ");
+	f << "0 [" << transform.getX() << " " << transform.getY() << " " + transform.getZ() << "], ";
+
+
+	//renderer
+	if (renderer != nullptr) f << "1 [" << renderer->getWidth() << " " << renderer->getHeight() << " " << renderer->getColor().r << " " + 
+		renderer->getColor().g << " " << renderer->getColor().b << "], ";
+
+	//collider
+	if (collider != nullptr) f << "2, ";
+
+	//player controller
+	if (controller != nullptr) f << "3, ";
+
+	//color changer
+	if (colorChanger != nullptr) f << "4, ";
+
+	f << std::endl;
+
+	result = Tungine::ConvertStream(f);
+	return result;
+}
+
+

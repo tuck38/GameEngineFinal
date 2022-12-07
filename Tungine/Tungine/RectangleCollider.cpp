@@ -2,6 +2,7 @@
 
 void RectangleCollider::CheckCollision(RectangleCollider* other)
 {
+	/*
 	if (topLeft.getX() <= other->topLeft.getX() && topLeft.getX() >= other->bottomRight.getX() && topLeft.getY() <= other->topLeft.getY() && topLeft.getY() >= other->bottomRight.getY() ||
 		topRight.getX() <= other->topLeft.getX() && topRight.getX() >= other->bottomRight.getX() && topRight.getY() <= other->topLeft.getY() && topRight.getY() >= other->bottomRight.getY() || 
 		bottomLeft.getX() <= other->topLeft.getX() && bottomLeft.getX() >= other->bottomRight.getX() && bottomLeft.getY() <= other->topLeft.getY() && bottomLeft.getY() >= other->bottomRight.getY() || 
@@ -13,6 +14,23 @@ void RectangleCollider::CheckCollision(RectangleCollider* other)
 	{
 		isColliding = false;
 	}
+	*/
+	//leaving it here to shame you
+	if (topLeft.getX() > other->bottomRight.getX() || bottomRight.getX() < other->topLeft.getX()) //rectangles separate on the x axis
+	{
+		isColliding = false;
+		return;
+	}
+
+	if (topLeft.getY() > other->bottomRight.getY() || bottomRight.getY() < other->topLeft.getY()) //rectangles separate on the y axis
+	{
+		isColliding = false;
+		return;
+	}
+
+	isColliding = true;
+
+
 }
 
 bool RectangleCollider::containsPoint(Transform t)
