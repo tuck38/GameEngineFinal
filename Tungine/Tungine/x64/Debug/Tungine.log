@@ -1,0 +1,10 @@
+﻿  World.cpp
+C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\Tungine\RectangleCollider.h(31,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\Tungine\RectangleCollider.h(31,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\Tungine\RectangleCollider.h(32,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\Tungine\RectangleCollider.h(33,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\Tungine\RectangleCollider.h(59,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\Tungine\RectangleCollider.h(59,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\Tungine\RectangleCollider.h(60,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\Tungine\RectangleCollider.h(61,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Tungine.vcxproj -> C:\Users\ryan.tucker\source\repos\Game Engine\GPR-460-01-FA2022-but-tuckified\Tungine\x64\Debug\Tungine.exe

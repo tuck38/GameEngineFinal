@@ -1,0 +1,1 @@
+emcc main.cpp system_Emscripten.cpp GameObject.cpp -sUSE_SDL=2 -o build\cool.html
