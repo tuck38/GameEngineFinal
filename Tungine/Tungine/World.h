@@ -35,6 +35,13 @@ namespace Tungine
 		static void createRenderer(GameObject& obj, RectangleRenderer rr);
 		static void createCollider(GameObject& obj, RectangleCollider rc);
 
+		static void deleteObject(GameObject& obj);
+
+		static void clearRenderer(int index);
+		static void clearCollider(int index);
+		static void clearController(int index);
+		static void clearColorChanger(int index);
+
 		static void Init(SDL_Renderer* rend, Transform mp);
 		static void Update();
 		static void Draw();

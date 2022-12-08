@@ -143,3 +143,70 @@ void Tungine::World::createCollider(GameObject& obj, RectangleCollider rc)
 	activeColliderComponents++;
 	obj.createCollider(&colliders[activeColliderComponents- 1]);
 }
+
+void Tungine::World::deleteObject(GameObject& obj)
+{
+	int index = -1;
+	for (int i = 0; i < gameObjects.size(); i++)
+	{
+		if (gameObjects[i] == &obj)
+		{
+			if (gameObjects[i]->getRenderer() != nullptr) clearRenderer(i);
+			if (gameObjects[i]->getCollider() != nullptr) clearCollider(i);
+			if (gameObjects[i]->getColorChanger() != nullptr) clearColorChanger(i);
+			if (gameObjects[i]->getPlayer() != nullptr) clearController(i);
+
+			index = i;
+			break;
+		}
+	}
+	if (index >= 0)
+	{
+		for (int i = index; i < gameObjects.size()-1; i++)
+		{
+			gameObjects[i] = gameObjects[i + 1];
+		}
+		gameObjects.pop_back();
+
+	}
+}
+
+void Tungine::World::clearRenderer(int index)
+{
+	for (int i = index; i < activeRendererComponents; i++)
+	{
+		renderers[i] = renderers[i + 1];
+	}
+	activeRendererComponents--;
+}
+
+
+void Tungine::World::clearCollider(int index)
+{
+	for (int i = index; i < activeColliderComponents; i++)
+	{
+		colliders[i] = colliders[i + 1];
+	}
+	activeColliderComponents--;
+}
+
+
+void Tungine::World::clearColorChanger(int index)
+{
+	for (int i = index; i < activeColorComponents; i++)
+	{
+		colorChangers[i] = colorChangers[i + 1];
+	}
+	activeColorComponents--;
+}
+
+
+void Tungine::World::clearController(int index)
+{
+	for (int i = index; i < activeControllerComponents; i++)
+	{
+		players[i] = players[i + 1];
+	}
+	activeControllerComponents--;
+}
+

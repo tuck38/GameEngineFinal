@@ -54,6 +54,18 @@ public:
 	{
 		return renderer;
 	}
+	PlayerController* getPlayer()
+	{
+		return controller;
+	}
+	RectangleCollider* getCollider()
+	{
+		return collider;
+	}
+	ColliderColorChange* getColorChanger()
+	{
+		return colorChanger;
+	}
 
 	/*RectangleRenderer* createRenderer(SDL_Color c);
 	ColliderColorChange* createColorChanger();

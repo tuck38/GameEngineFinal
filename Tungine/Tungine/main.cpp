@@ -183,7 +183,7 @@ void frameStep(void* arg)
                 engine->placement = new GameObject(Transform(event.button.x, event.button.y, 0), 0, 0); //width and height will be changed as the mouse moves
                 Tungine::World::createRenderer(*engine->placement, RectangleRenderer(engine->placement->getHeight(), engine->placement->getWidth(), SDL_Color{ 1, 255, 1 }, engine->placement->getTransform()));
                 Tungine::World::createCollider(*engine->placement, RectangleCollider(engine->placement->getHeight(), engine->placement->getWidth(), engine->placement->getTransform()));
-
+                Tungine::World::gameObjects.push_back(engine->placement);
             }
         }
         if (event.type == SDL_MOUSEBUTTONUP && event.button.button == SDL_BUTTON_LEFT)
@@ -200,6 +200,7 @@ void frameStep(void* arg)
                 Tungine::World::gameObjects.push_back(newObject);
 
 
+                Tungine::World::deleteObject(*engine->placement);
                 delete engine->placement;
                 engine->placement = nullptr;
             }
