@@ -10,6 +10,10 @@ struct EngineState
     Uint32 frameStart;
     bool quit;
     int frame;
+
+    GameObject* placement;
+    int placeX;
+    int placeY;
 };
 
 Tungine::World* Tungine::World::world = nullptr;
@@ -44,6 +48,7 @@ int main(int argc, char* argv[])
     engine.frame = 0;
     engine.frameStart = GetTicks();
     engine.system = system;
+    engine.placement = nullptr;
 
     GameObject* backdrop = new GameObject(Transform(0, 0, 0), WIDTH, HEIGHT);
 
@@ -169,12 +174,55 @@ void frameStep(void* arg)
                 engine->quit = true;
             }
         }
+        if (event.type == SDL_MOUSEBUTTONDOWN)
+        {
+            if (event.button.button == SDL_BUTTON_LEFT && engine->placement == nullptr)
+            {
+                engine->placeX = event.button.x;
+                engine->placeY = event.button.y;
+                engine->placement = new GameObject(Transform(event.button.x, event.button.y, 0), 0, 0); //width and height will be changed as the mouse moves
+                Tungine::World::createRenderer(*engine->placement, RectangleRenderer(engine->placement->getHeight(), engine->placement->getWidth(), SDL_Color{ 1, 255, 1 }, engine->placement->getTransform()));
+                Tungine::World::createCollider(*engine->placement, RectangleCollider(engine->placement->getHeight(), engine->placement->getWidth(), engine->placement->getTransform()));
+
+            }
+        }
+        if (event.type == SDL_MOUSEBUTTONUP && event.button.button == SDL_BUTTON_LEFT)
+        {
+            if (engine->placement != nullptr)
+            {
+                GameObject* newObject = new GameObject(Transform(engine->placement->getTransform().getX(), engine->placement->getTransform().getY(), 1), 
+                    engine->placement->getRenderer()->getHeight(), engine->placement->getRenderer()->getWidth());
+
+                Tungine::World::createRenderer(*newObject, RectangleRenderer(newObject->getHeight(), newObject->getWidth(), SDL_Color{ 1, 255, 255 }, newObject->getTransform()));
+                Tungine::World::createColorChanger(*newObject, ColliderColorChange(SDL_Color{ 1, 255, 255 }));
+                Tungine::World::createCollider(*newObject, RectangleCollider(newObject->getWidth(), newObject->getHeight(), newObject->getTransform()));
+
+                Tungine::World::gameObjects.push_back(newObject);
+
+
+                delete engine->placement;
+                engine->placement = nullptr;
+            }
+            
+        }
 
     }
 
     SDL_SetRenderDrawColor(engine->renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 
     SDL_RenderClear(engine->renderer);
+
+    if (engine->placement != nullptr)
+    {
+        int *x = new int;
+        int *y = new int;
+        SDL_GetMouseState(x, y);
+        engine->placement->getRenderer()->setWidth(*y - engine->placeY);
+        engine->placement->getRenderer()->setHeight(*x - engine->placeX);
+        delete x;
+        delete y;
+    }
+
 
     Tungine::World::Update();
 

@@ -24,7 +24,12 @@ public:
 
 	~GameObject()
 	{
-
+		/*
+		if (renderer != nullptr) delete renderer;
+		if (collider != nullptr) delete collider;
+		if (controller != nullptr) delete controller;
+		if (colorChanger != nullptr) delete colorChanger;
+		*/
 	}
 
 	float getHeight()
@@ -37,9 +42,17 @@ public:
 		return width;
 	}
 
+	void setWidth(int newWidth) { width = newWidth; }
+	void setHeight(int newHeight) { height = newHeight; }
+
 	Transform& getTransform()
 	{
 		return transform;
+	}
+
+	RectangleRenderer* getRenderer()
+	{
+		return renderer;
 	}
 
 	/*RectangleRenderer* createRenderer(SDL_Color c);

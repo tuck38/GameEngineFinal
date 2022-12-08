@@ -103,8 +103,9 @@ Tungine::string GameObject::PrintObject(int id)//pass the object's place in Worl
 
 	f << std::endl;
 
-	result = Tungine::ConvertStream(f);
-	return result;
+	//result = Tungine::ConvertStream(f);
+	//return result;
+	return L"";
 }
 
 

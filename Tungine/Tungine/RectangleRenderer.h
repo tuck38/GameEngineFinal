@@ -38,6 +38,9 @@ public:
 		return width;
 	}
 
+	void setHeight(float value) { height = value; }
+	void setWidth(float value) { width = value; }
+
 	SDL_Color getColor()
 	{
 		return color;
