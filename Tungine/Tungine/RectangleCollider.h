@@ -1,6 +1,7 @@
 #pragma once
 #include "ColliderColorChanger.h"
 
+class GameObject;
 class RectangleCollider
 {
 public:
@@ -56,15 +57,18 @@ public:
 	{
 		transform = t;
 		topLeft = t;
-		bottomRight = Transform(t.getX() - width, t.getY() - height, 0);
+		bottomRight = Transform(t.getX() - width, t.getY() + height, 0);
 		topRight = Transform(t.getX() - width, t.getY(), 0);
-		bottomLeft = Transform(t.getX(), t.getY() - height, 0);
+		bottomLeft = Transform(t.getX(), t.getY() + height, 0);
 	}
 
 	Transform getTransform()
 	{
 		return transform;
 	}
+
+	void setObject(GameObject* value) { go = value; }
+	GameObject* getObject() { return go; }
 
 private:
 	float height, width;
@@ -75,4 +79,6 @@ private:
 	Transform topLeft, topRight, bottomLeft, bottomRight;
 
 	Transform transform;
+
+	GameObject* go; //to be able to access the object you click on
 };

@@ -54,5 +54,7 @@ namespace Tungine
 		static void objectsOverlappingPoint();
 
 		static void Shutdown();
+
+		static RectangleCollider* FindObjectAtPoint(Transform t);
 	};
 }

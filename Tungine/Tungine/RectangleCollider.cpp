@@ -35,9 +35,11 @@ void RectangleCollider::CheckCollision(RectangleCollider* other)
 
 bool RectangleCollider::containsPoint(Transform t)
 {
-	if (topLeft.getX() >= t.getX() && topLeft.getY() >= t.getY() && bottomRight.getX() <= t.getX() && bottomRight.getY() <= t.getY())
+	//if (topLeft.getX() <= t.getX() && topLeft.getY() >= t.getY() && bottomRight.getX() >= t.getX() && bottomRight.getY() <= t.getY())
+	if(t.getX() >= topLeft.getX() && t.getX() <= bottomRight.getX() && t.getY() <= topLeft.getY() && t.getY() >= bottomRight.getY())
 	{
 		return true;
 	}
+
 	return false;
 }

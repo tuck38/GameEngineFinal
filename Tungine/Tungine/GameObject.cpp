@@ -39,6 +39,7 @@ ColliderColorChange* GameObject::createColorChanger(ColliderColorChange *c)
 RectangleCollider* GameObject::createCollider(RectangleCollider *c)
 {
 	collider = c;
+	collider->setObject(this);
 	return collider;
 }
 
