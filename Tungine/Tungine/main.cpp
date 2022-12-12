@@ -18,6 +18,10 @@ struct EngineState
     GameObject* held;
     //commands:
     //backspace to delete
+    //1 to increase width
+    //2 to decrease width
+    //3 to increase height
+    //4 to decrease height
 };
 
 Tungine::World* Tungine::World::world = nullptr;
@@ -25,6 +29,8 @@ Tungine::World* Tungine::World::world = nullptr;
 void runMainLoop(EngineState* engine);
 void frameStep(void* arg);
 Uint32 GetTicks();
+
+
 
 int main(int argc, char* argv[])
 {
@@ -53,7 +59,7 @@ int main(int argc, char* argv[])
     engine.frameStart = GetTicks();
     engine.system = system;
     engine.placement = nullptr;
-
+    engine.held = nullptr;
     GameObject* backdrop = new GameObject(Transform(0, 0, 0), WIDTH, HEIGHT);
 
     Tungine::World::createRenderer(*backdrop, RectangleRenderer(backdrop->getHeight(), backdrop->getWidth(), SDL_Color{ 0, 0, 0 }, backdrop->getTransform()));
@@ -67,6 +73,8 @@ int main(int argc, char* argv[])
     Tungine::World::createCollider(*player, RectangleCollider(player->getHeight(), player->getWidth(), player->getTransform()));
     Tungine::World::createPlayerController(*player, PlayerController(moveSpeed, player->getTransform()));
 
+    player->setName("player");
+
    Tungine::World::gameObjects.push_back(player);
 
     GameObject* collidable = new GameObject(Transform(WIDTH - 100, HEIGHT / 2, 1), 50, 50); //green
@@ -75,6 +83,8 @@ int main(int argc, char* argv[])
     Tungine::World::createColorChanger(*collidable, ColliderColorChange(SDL_Color{1, 255, 1}));
     Tungine::World::createCollider(*collidable, RectangleCollider(collidable->getHeight(), collidable->getWidth(), collidable->getTransform()));
 
+    collidable->setName("green");
+
     Tungine::World::gameObjects.push_back(collidable);
 
     GameObject* collidable2 = new GameObject(Transform(WIDTH - 300, HEIGHT / 4, 1), 50, 50); //blue
@@ -82,6 +92,8 @@ int main(int argc, char* argv[])
     Tungine::World::createRenderer(*collidable2, RectangleRenderer(collidable2->getHeight(), collidable2->getWidth(), SDL_Color{ 1, 255, 255 }, collidable2->getTransform()));
     Tungine::World::createColorChanger(*collidable2, ColliderColorChange(SDL_Color{ 1, 255, 255 }));
     Tungine::World::createCollider(*collidable2, RectangleCollider(collidable2->getHeight(), collidable2->getWidth(), collidable2->getTransform()));
+
+    collidable2->setName("blue");
 
     Tungine::World::gameObjects.push_back(collidable2);
 
@@ -181,7 +193,37 @@ void frameStep(void* arg)
             {
                 if (engine->held != nullptr) //if there is currently a held object
                 {
-                    Tungine::World::deleteObject(*engine->held);
+                    Tungine::World::deleteObject(engine->held);
+                    delete engine->held;
+                    engine->held = nullptr;
+                }
+            }
+            if (event.key.keysym.sym == SDLK_1) //1 - increase width
+            {
+                if (engine->held != nullptr) //if there is currently a held object
+                {
+                    engine->held->changeWidth(20);
+                }
+            }
+            if (event.key.keysym.sym == SDLK_2) //2 - decrease width
+            {
+                if (engine->held != nullptr) //if there is currently a held object
+                {
+                    engine->held->changeWidth(-20);
+                }
+            }
+            if (event.key.keysym.sym == SDLK_3) //3 - increase height
+            {
+                if (engine->held != nullptr) //if there is currently a held object
+                {
+                    engine->held->changeHeight(20);
+                }
+            }
+            if (event.key.keysym.sym == SDLK_4) //4 - decrease height
+            {
+                if (engine->held != nullptr) //if there is currently a held object
+                {
+                    engine->held->changeHeight(-20);
                 }
             }
         }
@@ -227,9 +269,9 @@ void frameStep(void* arg)
                 Tungine::World::createCollider(*newObject, RectangleCollider(newObject->getWidth(), newObject->getHeight(), newObject->getTransform()));
 
                 Tungine::World::gameObjects.push_back(newObject);
+                newObject->setName("temp");
 
-
-                Tungine::World::deleteObject(*engine->placement);
+                Tungine::World::deleteObject(engine->placement);
                 delete engine->placement;
                 engine->placement = nullptr;
                 engine->placeActive = false;
@@ -238,6 +280,11 @@ void frameStep(void* arg)
         }
 
     }
+
+    //if (engine->held != nullptr)
+    //{
+    //    std::cout << engine->held->getName() << std::endl;
+    //}
 
     SDL_SetRenderDrawColor(engine->renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 

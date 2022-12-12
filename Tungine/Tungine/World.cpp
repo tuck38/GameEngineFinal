@@ -144,12 +144,12 @@ void Tungine::World::createCollider(GameObject& obj, RectangleCollider rc)
 	obj.createCollider(&colliders[activeColliderComponents- 1]);
 }
 
-void Tungine::World::deleteObject(GameObject& obj)
+void Tungine::World::deleteObject(GameObject* obj)
 {
 	int index = -1;
 	for (int i = 0; i < gameObjects.size(); i++)
 	{
-		if (gameObjects[i] == &obj)
+		if (gameObjects[i] == obj)
 		{
 			//checks for nullptr might not be necessary
 			if (gameObjects[i]->getRenderer() != nullptr) clearRenderer(gameObjects[i]);

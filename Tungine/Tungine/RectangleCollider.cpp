@@ -43,3 +43,27 @@ bool RectangleCollider::containsPoint(Transform t)
 
 	return false;
 }
+
+
+void RectangleCollider::setHeight(int value)
+{
+	height = value;
+	bottomRight = Transform(transform.getX() - width, transform.getY() + height, 0);
+	bottomLeft = Transform(transform.getX(), transform.getY() + height, 0);
+}
+
+void RectangleCollider::setWidth(int value)
+{
+	width = value;
+	bottomRight = Transform(transform.getX() - width, transform.getY() + height, 0);
+	topRight = Transform(transform.getX() - width, transform.getY(), 0);
+}
+
+/*
+
+transform = t;
+		topLeft = t;
+		bottomRight = Transform(t.getX() - width, t.getY() + height, 0);
+		topRight = Transform(t.getX() - width, t.getY(), 0);
+		bottomLeft = Transform(t.getX(), t.getY() + height, 0);
+*/

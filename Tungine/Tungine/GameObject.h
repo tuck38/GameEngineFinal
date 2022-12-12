@@ -81,11 +81,18 @@ public:
 
 	Tungine::string PrintObject(int id);
 
+	void changeWidth(int diff);
+	void changeHeight(int diff);
+
+	void setName(std::string value) { name = value; }
+	std::string getName() { return name; }
 protected:
 	float height;
 	float width;
 
 	bool isColliding;
+
+	std::string name;
 
 	Transform transform;
 	RectangleRenderer* renderer;

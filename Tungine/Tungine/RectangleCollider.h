@@ -62,6 +62,10 @@ public:
 		bottomLeft = Transform(t.getX(), t.getY() + height, 0);
 	}
 
+	void setHeight(int value);
+	void setWidth(int value);
+
+
 	Transform getTransform()
 	{
 		return transform;

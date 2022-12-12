@@ -109,4 +109,15 @@ Tungine::string GameObject::PrintObject(int id)//pass the object's place in Worl
 	return L"";
 }
 
-
+void GameObject::changeHeight(int diff)
+{
+	height += diff;
+	if (collider != nullptr) collider->setHeight(height);
+	if (renderer != nullptr) renderer->setHeight(height);
+}
+void GameObject::changeWidth(int diff)
+{
+	width += diff;
+	if (collider != nullptr) collider->setWidth(width);
+	if (renderer != nullptr) renderer->setWidth(width);
+}

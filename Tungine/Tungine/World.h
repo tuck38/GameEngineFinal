@@ -35,7 +35,7 @@ namespace Tungine
 		static void createRenderer(GameObject& obj, RectangleRenderer rr);
 		static void createCollider(GameObject& obj, RectangleCollider rc);
 
-		static void deleteObject(GameObject& obj);
+		static void deleteObject(GameObject* obj);
 
 		static void clearRenderer(GameObject* obj);
 		static void clearCollider(GameObject* obj);
