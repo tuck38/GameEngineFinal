@@ -37,6 +37,11 @@ namespace Tungine
 
 		static void deleteObject(GameObject& obj);
 
+		static void clearRenderer(GameObject* obj);
+		static void clearCollider(GameObject* obj);
+		static void clearController(GameObject* obj);
+		static void clearColorChanger(GameObject* obj);
+
 		static void clearRenderer(int index);
 		static void clearCollider(int index);
 		static void clearController(int index);
