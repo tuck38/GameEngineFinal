@@ -18,6 +18,8 @@ public:
 		bottomRight = Transform();
 		topRight = Transform();
 		bottomLeft = Transform();
+
+		go = nullptr;
 	}
 
 	RectangleCollider(float h, float w, Transform t)
@@ -29,9 +31,11 @@ public:
 		isColliding = false;
 
 		topLeft = t;
-		bottomRight = Transform(t.getX() - width, t.getY() - height, 0);
-		topRight = Transform(t.getX() - width, t.getY(), 0);
+		bottomRight = Transform(t.getX() + width, t.getY() - height, 0);
+		topRight = Transform(t.getX() + width, t.getY(), 0);
 		bottomLeft = Transform(t.getX(), t.getY() - height, 0);
+
+		go = nullptr;
 	}
 
 	void CheckCollision(RectangleCollider* other);

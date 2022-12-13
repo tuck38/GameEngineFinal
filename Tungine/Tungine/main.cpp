@@ -234,6 +234,7 @@ void frameStep(void* arg)
                 int xVal = event.button.x;
                 int yVal = event.button.y;
                 RectangleCollider* temp = Tungine::World::FindObjectAtPoint(Transform(xVal, yVal, 0));
+
                 if (temp != nullptr) //there is an object where you click
                 {
                     engine->held = temp->getObject();
@@ -265,7 +266,7 @@ void frameStep(void* arg)
                     engine->placement->getRenderer()->getHeight(), engine->placement->getRenderer()->getWidth());
 
                 Tungine::World::createRenderer(*newObject, RectangleRenderer(newObject->getHeight(), newObject->getWidth(), SDL_Color{ 1, 255, 255 }, newObject->getTransform()));
-                Tungine::World::createColorChanger(*newObject, ColliderColorChange(SDL_Color{ 1, 255, 255 }));
+                Tungine::World::createColorChanger(*newObject, ColliderColorChange(SDL_Color{ 1, 255, 1 }));
                 Tungine::World::createCollider(*newObject, RectangleCollider(newObject->getWidth(), newObject->getHeight(), newObject->getTransform()));
 
                 Tungine::World::gameObjects.push_back(newObject);
