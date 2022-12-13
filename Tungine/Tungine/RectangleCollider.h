@@ -31,9 +31,9 @@ public:
 		isColliding = false;
 
 		topLeft = t;
-		bottomRight = Transform(t.getX() + width, t.getY() - height, 0);
+		bottomRight = Transform(t.getX() + width, t.getY() + height, 0);
 		topRight = Transform(t.getX() + width, t.getY(), 0);
-		bottomLeft = Transform(t.getX(), t.getY() - height, 0);
+		bottomLeft = Transform(t.getX(), t.getY() + height, 0);
 
 		go = nullptr;
 	}
