@@ -95,7 +95,7 @@ public:
 
 	void Update();
 
-	Tungine::string PrintObject(int id);
+	std::string PrintObject(int id);
 
 	void changeWidth(int diff);
 	void changeHeight(int diff);

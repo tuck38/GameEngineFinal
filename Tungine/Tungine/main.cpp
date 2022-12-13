@@ -126,6 +126,13 @@ int main(int argc, char* argv[])
 
     runMainLoop(&engine);
 
+    //checking object printing
+    for (int i = 0; i < Tungine::World::gameObjects.size(); i++)
+    {
+        std::cout << Tungine::World::gameObjects[i]->PrintObject(i);
+    }
+
+
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();

@@ -1,12 +1,145 @@
-﻿  World.cpp
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(35,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(36,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(65,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(66,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\GameObject.h(50,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\Tungine\GameObject.h(51,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Tungine.vcxproj -> C:\Users\ryan.tucker\source\repos\Fall2022\Group Projects\GameEngineFinal\Tungine\x64\Debug\Tungine.exe
+﻿  GameObject.cpp
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(35,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(36,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(65,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(66,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(50,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(51,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.cpp(121,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.cpp(127,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  LevelLoader.cpp
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(35,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(36,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(65,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(66,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(50,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(51,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(56,39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(58,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(19,8): warning C4101: 'id': unreferenced local variable
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(91,50): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(91,41): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(91,32): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(102,28): warning C4838: conversion from '_Ty' to 'Uint8' requires a narrowing conversion
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(102,28): warning C4244: 'initializing': conversion from '_Ty' to 'Uint8', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(102,37): warning C4838: conversion from '_Ty' to 'Uint8' requires a narrowing conversion
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(102,37): warning C4244: 'initializing': conversion from '_Ty' to 'Uint8', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(102,46): warning C4838: conversion from '_Ty' to 'Uint8' requires a narrowing conversion
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(102,46): warning C4244: 'initializing': conversion from '_Ty' to 'Uint8', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(115,28): warning C4838: conversion from '_Ty' to 'Uint8' requires a narrowing conversion
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(115,28): warning C4244: 'initializing': conversion from '_Ty' to 'Uint8', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(115,37): warning C4838: conversion from '_Ty' to 'Uint8' requires a narrowing conversion
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(115,37): warning C4244: 'initializing': conversion from '_Ty' to 'Uint8', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(115,46): warning C4838: conversion from '_Ty' to 'Uint8' requires a narrowing conversion
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\LevelLoader.cpp(115,46): warning C4244: 'initializing': conversion from '_Ty' to 'Uint8', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+  RectangleCollider.cpp
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(35,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(36,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(65,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(66,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.cpp(50,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.cpp(51,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.cpp(51,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.cpp(52,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.cpp(57,10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.cpp(58,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.cpp(58,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.cpp(59,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  World.cpp
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(35,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(36,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(65,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(66,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(50,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(51,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(34,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(35,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(36,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(64,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(65,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(66,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(50,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(51,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\main.cpp(312,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\main.cpp(313,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Tungine.vcxproj -> C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\x64\Debug\Tungine.exe

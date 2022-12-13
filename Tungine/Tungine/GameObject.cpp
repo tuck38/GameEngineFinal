@@ -71,42 +71,48 @@ ColliderColorChange* GameObject::createColorChanger()
 	return colorChanger = new ColliderColorChange(renderer->getDefaultColor());
 }*/
 
-Tungine::string GameObject::PrintObject(int id)//pass the object's place in World::gameobjects
+std::string GameObject::PrintObject(int id)//pass the object's place in World::gameobjects
 {
-	//[Obj ID], [compID] [parameters], [compID], [compID],
-	//ex: 1, 0 [20.0 40.0 0.0], 1 [40.0 60.0 255 255 255], 2,
+	//object id | transform | HW |  Renderer || colorchanger | collider | player controller
+	//ex: 1| 0 [400.0 250.0 0]| 1 [50 50]| 2 [100.0 20.5 40.7]| 3 [100.0 20.5 40.7]| 4 [0.0]| 5 [5.0]|
 	// 0 - transform [x y z] 1 - renderer [width height r g b] 2 - collider
 
-	Tungine::string result;
+	//Tungine::string result;
 
 	std::stringstream f;
 
-	f << id << ", ";
+	f << id << "| ";
 	//result.append(id + L", ");
 
 	//transform
 	//result.append(L"0 [" + transform.getX() + L" " + transform.getY() + L" " + transform.getZ() + L"], ");
-	f << "0 [" << transform.getX() << " " << transform.getY() << " " + transform.getZ() << "], ";
+	f << "0 [" << transform.getX() << " " << transform.getY() << " " + transform.getZ() << "]| ";
 
+	//height and width
+	f << "1 [" << renderer->getHeight() << " " << renderer->getWidth() << "]| ";
 
 	//renderer
-	if (renderer != nullptr) f << "1 [" << renderer->getWidth() << " " << renderer->getHeight() << " " << renderer->getColor().r << " " + 
-		renderer->getColor().g << " " << renderer->getColor().b << "], ";
+	if (renderer != nullptr) f << "2 [" << (int)renderer->getColor().r << " " << (int)renderer->getColor().g << " " << (int)renderer->getColor().b << "]| ";
 
 	//collider
-	if (collider != nullptr) f << "2, ";
+	if (colorChanger != nullptr) f << "3 [" << (int)renderer->getColor().r << " " << (int)renderer->getColor().g << " " << (int)renderer->getColor().b << "]| ";
 
 	//player controller
-	if (controller != nullptr) f << "3, ";
+	if (collider != nullptr) f << "4 [0.0]| ";
 
 	//color changer
-	if (colorChanger != nullptr) f << "4, ";
+	if (controller != nullptr) f << "5 [0.0]| ";
 
 	f << std::endl;
 
+
+
+	std::string result = f.str();
+	return result;
+
 	//result = Tungine::ConvertStream(f);
 	//return result;
-	return L"";
+	//return L"";
 }
 
 void GameObject::changeHeight(int diff)
