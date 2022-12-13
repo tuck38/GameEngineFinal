@@ -18,12 +18,15 @@ ColliderColorChange Tungine::World::colorChangers[] = {};
 
 SDL_Renderer* Tungine::World::renderer =  nullptr;
 
+LevelLoader* Tungine::World::loadLevel = nullptr;
+
 std::vector<GameObject*> Tungine::World::gameObjects;
 
 void Tungine::World::Init(SDL_Renderer* rend, Transform mp)
 {
 	masterPoint = mp;
 	Tungine::World::renderer = rend;
+	Tungine::World::loadLevel = new LevelLoader();
 }
 
 void Tungine::World::Draw()
@@ -113,6 +116,7 @@ void Tungine::World::Shutdown()
 	}
 	gameObjects.clear();
 
+	delete loadLevel;
 	delete world;
 }
 

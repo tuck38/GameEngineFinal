@@ -8,6 +8,11 @@
 class GameObject
 {
 public:
+	GameObject()
+	{
+
+	}
+
 	GameObject(Transform t, float h, float w)
 	{
 		height = h;
@@ -44,6 +49,17 @@ public:
 
 	void setWidth(int newWidth) { width = newWidth; }
 	void setHeight(int newHeight) { height = newHeight; }
+
+	void setTransform(Transform t)
+	{
+		transform = t;
+	}
+
+	void setHW(float h, float w)
+	{
+		height = h;
+		width = w;
+	}
 
 	Transform& getTransform()
 	{

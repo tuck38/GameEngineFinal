@@ -147,6 +147,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="ColliderColorChanger.h" />
     <ClInclude Include="FrameAllocator.h" />
+    <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="RectangleCollider.h" />
     <ClInclude Include="Transform.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="ColliderColorChanger.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="FrameAllocator.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="system_Win32.cpp" />

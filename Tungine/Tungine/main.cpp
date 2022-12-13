@@ -60,7 +60,8 @@ int main(int argc, char* argv[])
     engine.system = system;
     engine.placement = nullptr;
     engine.held = nullptr;
-    GameObject* backdrop = new GameObject(Transform(0, 0, 0), WIDTH, HEIGHT);
+    
+    /*GameObject* backdrop = new GameObject(Transform(0, 0, 0), WIDTH, HEIGHT);
 
     Tungine::World::createRenderer(*backdrop, RectangleRenderer(backdrop->getHeight(), backdrop->getWidth(), SDL_Color{ 0, 0, 0 }, backdrop->getTransform()));
 
@@ -95,7 +96,7 @@ int main(int argc, char* argv[])
 
     collidable2->setName("blue");
 
-    Tungine::World::gameObjects.push_back(collidable2);
+    Tungine::World::gameObjects.push_back(collidable2);*/
 
     //LEGACY COMPONENT CREATION
     /*GameObject* player = new GameObject(Transform(10, HEIGHT / 2, 1), 50, 50);
@@ -120,6 +121,8 @@ int main(int argc, char* argv[])
     backdrop->createRenderer(SDL_Color{ 255, 255, 255 });
 
     engine.gameObjects.push_back(backdrop);*/
+
+    Tungine::World::loadLevel->loadLevel("level0.txt");
 
     runMainLoop(&engine);
 
@@ -237,6 +240,7 @@ void frameStep(void* arg)
 
                 if (temp != nullptr) //there is an object where you click
                 {
+                    std::cout << "fuck, this cursor be in a bitch\n";
                     engine->held = temp->getObject();
                 }
                 else //no object where you click

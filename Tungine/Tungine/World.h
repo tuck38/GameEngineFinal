@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "FrameAllocator.h"
+#include "LevelLoader.h"
 
 namespace Tungine
 {
@@ -10,6 +11,8 @@ namespace Tungine
 		static World* world;
 
 		static SDL_Renderer* renderer;
+
+		static LevelLoader* loadLevel;
 
 		static int activeRendererComponents;
 		static int activeColliderComponents;
