@@ -1,0 +1,16 @@
+CLICK AND DRAG TO CREATE AN OBJECT
+
+CLICK ON AN OBJECT TO SELECT
+
+1 = increase height
+
+2 = decrease height
+
+3 = increase width
+
+4 = decrease width
+
+5 = add/remove collider
+
+6 = add/remove controller
+
