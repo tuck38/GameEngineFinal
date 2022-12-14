@@ -31,6 +31,11 @@ public:
 		return isColliding;
 	}
 
+	void setColor(SDL_Color c)
+	{
+		defaultColor = c;
+	}
+
 	void setState(bool &state)
 	{
 		isColliding = state;

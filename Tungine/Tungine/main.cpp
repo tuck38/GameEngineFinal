@@ -236,6 +236,54 @@ void frameStep(void* arg)
                     engine->held->changeHeight(-20);
                 }
             }
+            if (event.key.keysym.sym == SDLK_5) //5 - add/remove collider
+            {
+                if (engine->held != nullptr) //if there is currently a held object
+                {
+                    if (engine->held->getCollider() == nullptr)
+                    {
+                        std::cout << "collider created!\n";
+                        Tungine::World::createCollider(*engine->held, RectangleCollider(engine->held->getHeight(), engine->held->getWidth(), engine->held->getTransform()));
+                        Tungine::World::createColorChanger(*engine->held, ColliderColorChange(engine->held->getRenderer()->getColor()));
+                    }
+                    else
+                    {
+                        std::cout << "collider deleted!\n";
+                        for (int i = 0; i < Tungine::World::gameObjects.size(); i++)
+                        {
+                            if (Tungine::World::gameObjects[i] == engine->held)
+                            {
+                                Tungine::World::clearCollider(Tungine::World::gameObjects[i]);
+                                Tungine::World::clearColorChanger(Tungine::World::gameObjects[i]);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            if (event.key.keysym.sym == SDLK_6) //6 - add/remove controller
+            {
+                if (engine->held != nullptr) //if there is currently a held object
+                {
+                    if (engine->held->getPlayer() == nullptr)
+                    {
+                        std::cout << "controller created!\n";
+                        Tungine::World::createPlayerController(*engine->held, PlayerController(5, engine->held->getTransform()));
+                    }
+                    else
+                    {
+                        std::cout << "controller created!\n";
+                        for (int i = 0; i < Tungine::World::gameObjects.size(); i++)
+                        {
+                            if (Tungine::World::gameObjects[i] == engine->held)
+                            {
+                                Tungine::World::clearController(Tungine::World::gameObjects[i]);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
         if (event.type == SDL_MOUSEBUTTONDOWN)
         { //first check for left click, then to see if there is an object there. if so, put it in held. if not, create new
@@ -277,7 +325,7 @@ void frameStep(void* arg)
                     engine->placement->getRenderer()->getHeight(), engine->placement->getRenderer()->getWidth());
 
                 Tungine::World::createRenderer(*newObject, RectangleRenderer(newObject->getHeight(), newObject->getWidth(), SDL_Color{ 1, 255, 1 }, newObject->getTransform()));
-                Tungine::World::createColorChanger(*newObject, ColliderColorChange(SDL_Color{ 1, 255, 1 }));
+                Tungine::World::createColorChanger(*newObject, ColliderColorChange(newObject->getRenderer()->getColor()));
                 Tungine::World::createCollider(*newObject, RectangleCollider(newObject->getWidth(), newObject->getHeight(), newObject->getTransform()));
 
                 Tungine::World::gameObjects.push_back(newObject);
