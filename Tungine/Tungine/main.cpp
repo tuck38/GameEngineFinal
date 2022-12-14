@@ -122,7 +122,7 @@ int main(int argc, char* argv[])
 
     engine.gameObjects.push_back(backdrop);*/
 
-    Tungine::World::loadLevel->loadLevel("level0.txt");
+    Tungine::World::loadLevel->loadLevel("level1.txt");
 
     runMainLoop(&engine);
 

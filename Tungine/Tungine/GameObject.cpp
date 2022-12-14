@@ -86,22 +86,22 @@ std::string GameObject::PrintObject(int id)//pass the object's place in World::g
 
 	//transform
 	//result.append(L"0 [" + transform.getX() + L" " + transform.getY() + L" " + transform.getZ() + L"], ");
-	f << "0 [" << (int)transform.getX() << " " << (int)transform.getY() << " 0" << "]| ";
+	f << "0 [" << (int)transform.getX() << " " << (int)transform.getY() << " 0" << "]|";
 
 	//height and width
-	f << "1 [" << renderer->getHeight() << " " << renderer->getWidth() << "]| ";
+	f << " 1 [" << height << " " << width << "]|";
 
 	//renderer
-	if (renderer != nullptr) f << "2 [" << (float)renderer->getColor().r << " " << (float)renderer->getColor().g << " " << (float)renderer->getColor().b << "]| ";
+	if (renderer != nullptr) f << " 2 [" << (float)renderer->getColor().r << " " << (float)renderer->getColor().g << " " << (float)renderer->getColor().b << "]|";
 
 	//collider
-	if (colorChanger != nullptr) f << "3 [" << (float)renderer->getColor().r << " " << (float)renderer->getColor().g << " " << (float)renderer->getColor().b << "]| ";
+	if (colorChanger != nullptr) f << " 3 [" << (float)renderer->getColor().r << " " << (float)renderer->getColor().g << " " << (float)renderer->getColor().b << "]|";
 
 	//player controller
-	if (collider != nullptr) f << "4 [0.0]| ";
+	if (collider != nullptr) f << " 4 [0.0]|";
 
 	//color changer
-	if (controller != nullptr) f << "5 [0.0]| ";
+	if (controller != nullptr) f << " 5 [0.0]|";
 
 	f << std::endl;
 
