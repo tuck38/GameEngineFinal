@@ -276,7 +276,7 @@ void frameStep(void* arg)
                 GameObject* newObject = new GameObject(Transform(engine->placement->getTransform().getX(), engine->placement->getTransform().getY(), 1), 
                     engine->placement->getRenderer()->getHeight(), engine->placement->getRenderer()->getWidth());
 
-                Tungine::World::createRenderer(*newObject, RectangleRenderer(newObject->getHeight(), newObject->getWidth(), SDL_Color{ 1, 255, 255 }, newObject->getTransform()));
+                Tungine::World::createRenderer(*newObject, RectangleRenderer(newObject->getHeight(), newObject->getWidth(), SDL_Color{ 1, 255, 1 }, newObject->getTransform()));
                 Tungine::World::createColorChanger(*newObject, ColliderColorChange(SDL_Color{ 1, 255, 1 }));
                 Tungine::World::createCollider(*newObject, RectangleCollider(newObject->getWidth(), newObject->getHeight(), newObject->getTransform()));
 
