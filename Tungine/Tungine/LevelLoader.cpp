@@ -123,3 +123,19 @@ void LevelLoader::createColliderWithFile(GameObject& obj, std::vector<float> inf
 
 	Tungine::World::createCollider(obj, rc);
 }
+
+
+void LevelLoader::WriteLevelToFile()
+{
+	HANDLE fileToWrite;
+	fileToWrite = CreateFileW(L"Level1.txt", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_WRITE, NULL, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	//WriteFile(file, message.c_str(), message.size() * sizeof(wchar_t), 0, NULL);
+	std::stringstream ss;
+	for (int i = 0; i < Tungine::World::gameObjects.size(); i++)
+	{
+		ss << Tungine::World::gameObjects[i]->PrintObject(i);
+	}
+	std::string result = ss.str();
+	WriteFile(fileToWrite, result.c_str(), result.size() * sizeof(wchar_t), 0, NULL);
+}
+

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <Windows.h>
 
 
 class LevelLoader
@@ -23,4 +24,6 @@ public:
 	void createPlayerControllerWithFile(GameObject& obj, std::vector<float> info);
 	void createRendererWithFile(GameObject& obj, std::vector<float> info);
 	void createColliderWithFile(GameObject& obj, std::vector<float> info);
+
+	void WriteLevelToFile();
 };
