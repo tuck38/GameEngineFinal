@@ -118,12 +118,14 @@ std::string GameObject::PrintObject(int id)//pass the object's place in World::g
 void GameObject::changeHeight(int diff)
 {
 	height += diff;
+	if (height < 10) height = 10;
 	if (collider != nullptr) collider->setHeight(height);
 	if (renderer != nullptr) renderer->setHeight(height);
 }
 void GameObject::changeWidth(int diff)
 {
 	width += diff;
+	if (width < 10) width = 10;
 	if (collider != nullptr) collider->setWidth(width);
 	if (renderer != nullptr) renderer->setWidth(width);
 }
