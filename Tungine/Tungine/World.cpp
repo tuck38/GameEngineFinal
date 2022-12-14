@@ -156,23 +156,19 @@ void Tungine::World::deleteObject(GameObject* obj)
 		if (gameObjects[i] == obj)
 		{
 			//checks for nullptr might not be necessary
+			
 			if (gameObjects[i]->getRenderer() != nullptr) clearRenderer(gameObjects[i]);
 			if (gameObjects[i]->getCollider() != nullptr) clearCollider(gameObjects[i]);
 			if (gameObjects[i]->getColorChanger() != nullptr) clearColorChanger(gameObjects[i]);
 			if (gameObjects[i]->getPlayer() != nullptr) clearController(gameObjects[i]);
-
+			
 			index = i;
 			break;
 		}
 	}
 	if (index >= 0)
 	{
-		for (int i = index; i < gameObjects.size()-1; i++)
-		{
-			gameObjects[i] = gameObjects[i + 1];
-		}
-		gameObjects.pop_back();
-
+		gameObjects.erase(gameObjects.begin() + index);
 	}
 }
 
@@ -319,8 +315,7 @@ RectangleCollider* Tungine::World::FindObjectAtPoint(Transform t)
 	{
 		if (colliders[i].containsPoint(t))
 		{
-			r = &colliders[i];
-			break;
+			return &colliders[i];
 		}
 	}
 

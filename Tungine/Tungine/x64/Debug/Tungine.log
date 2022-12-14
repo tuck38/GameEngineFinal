@@ -9,6 +9,6 @@ C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCol
 C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\RectangleCollider.h(66,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(50,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\GameObject.h(51,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\main.cpp(311,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\main.cpp(312,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\main.cpp(310,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\main.cpp(311,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Tungine.vcxproj -> C:\Users\thomas.wagner\Source\Repos\GameEngineFinal\Tungine\Tungine\x64\Debug\Tungine.exe
