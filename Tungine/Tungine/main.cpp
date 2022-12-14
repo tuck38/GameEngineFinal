@@ -204,7 +204,7 @@ void frameStep(void* arg)
                 {
                     Tungine::World::deleteObject(engine->held);
                     delete engine->held;
-                    //engine->held = nullptr;
+                    engine->held = nullptr;
                 }
             }
             if (event.key.keysym.sym == SDLK_1) //1 - increase width

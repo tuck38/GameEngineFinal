@@ -59,5 +59,10 @@ namespace Tungine
 		static void Shutdown();
 
 		static RectangleCollider* FindObjectAtPoint(Transform t);
+
+		static int GetRendererLoc(GameObject* obj);
+		static int GetColliderLoc(GameObject* obj);
+		static int GetColorChangerLoc(GameObject* obj);
+		static int GetControllerLoc(GameObject* obj);
 	};
 }

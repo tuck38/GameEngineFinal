@@ -155,12 +155,10 @@ void Tungine::World::deleteObject(GameObject* obj)
 	{
 		if (gameObjects[i] == obj)
 		{
-			//checks for nullptr might not be necessary
-			
-			if (gameObjects[i]->getRenderer() != nullptr) clearRenderer(gameObjects[i]);
-			if (gameObjects[i]->getCollider() != nullptr) clearCollider(gameObjects[i]);
-			if (gameObjects[i]->getColorChanger() != nullptr) clearColorChanger(gameObjects[i]);
-			if (gameObjects[i]->getPlayer() != nullptr) clearController(gameObjects[i]);
+			clearRenderer(gameObjects[i]);
+			clearCollider(gameObjects[i]);
+			clearColorChanger(gameObjects[i]);
+			clearController(gameObjects[i]);
 			
 			index = i;
 			break;
@@ -171,6 +169,57 @@ void Tungine::World::deleteObject(GameObject* obj)
 		gameObjects.erase(gameObjects.begin() + index);
 	}
 }
+
+int Tungine::World::GetRendererLoc(GameObject* obj)
+{
+	for (int i = 0; i < activeRendererComponents; i++)
+	{
+		if (&renderers[i] == obj->getRenderer())
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+int Tungine::World::GetColliderLoc(GameObject* obj)
+{
+	for (int i = 0; i < activeColliderComponents; i++)
+	{
+		if (&colliders[i] == obj->getCollider())
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+int Tungine::World::GetColorChangerLoc(GameObject* obj)
+{
+	for (int i = 0; i < activeColorComponents; i++)
+	{
+		if (&colorChangers[i] == obj->getColorChanger())
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+int Tungine::World::GetControllerLoc(GameObject* obj)
+{
+	for (int i = 0; i < activeControllerComponents; i++)
+	{
+		if (&players[i] == obj->getPlayer())
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+
+
 
 void Tungine::World::clearRenderer(GameObject* obj)
 {
