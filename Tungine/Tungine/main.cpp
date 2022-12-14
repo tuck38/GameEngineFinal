@@ -271,7 +271,7 @@ void frameStep(void* arg)
                     }
                     else
                     {
-                        std::cout << "controller created!\n";
+                        std::cout << "controller deleted!\n";
                         for (int i = 0; i < Tungine::World::gameObjects.size(); i++)
                         {
                             if (Tungine::World::gameObjects[i] == engine->held)
@@ -294,7 +294,7 @@ void frameStep(void* arg)
 
                 if (temp != nullptr) //there is an object where you click
                 {
-                    std::cout << "fuck, this cursor be in a bitch\n";
+                    std::cout << "object held\n";
                     engine->held = temp->getObject();
                 }
                 else //no object where you click

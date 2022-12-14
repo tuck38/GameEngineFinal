@@ -13,6 +13,11 @@ void GameObject::Update()
 		}
 	}
 
+	if (renderer != nullptr)
+	{
+		renderer->setTransform(transform);
+	}
+
 	if (collider != nullptr)
 	{
 		isColliding = collider->getState();

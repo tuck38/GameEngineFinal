@@ -155,10 +155,22 @@ void Tungine::World::deleteObject(GameObject* obj)
 	{
 		if (gameObjects[i] == obj)
 		{
-			clearRenderer(gameObjects[i]);
-			clearCollider(gameObjects[i]);
-			clearColorChanger(gameObjects[i]);
-			clearController(gameObjects[i]);
+			if (gameObjects[i]->getRenderer() != nullptr)
+			{
+				clearRenderer(obj);
+			}
+			if (gameObjects[i]->getCollider() != nullptr)
+			{
+				clearCollider(obj);
+			}
+			if (gameObjects[i]->getColorChanger() != nullptr)
+			{
+				clearColorChanger(obj);
+			}
+			if (gameObjects[i]->getPlayer() != nullptr)
+			{
+				clearController(obj);
+			}
 			
 			index = i;
 			break;
@@ -229,16 +241,18 @@ void Tungine::World::clearRenderer(GameObject* obj)
 	{
 		if (&renderers[i] == renderer)
 		{
+			renderers[i] = RectangleRenderer();
 			index = i;
+			break;
 		}
 	}
 	if (index >= 0)
 	{
 		for (int i = index; i < activeRendererComponents - 1; i++)
 		{
-			renderers[i] = renderers[i + 1];
+			//Tungine::World::renderers[i] = renderers[i + 1];
 		}
-		activeRendererComponents--;
+		//activeRendererComponents--;
 	}
 	
 }
@@ -252,7 +266,9 @@ void Tungine::World::clearCollider(GameObject* obj)
 	{
 		if (&colliders[i] == collider)
 		{
+			colliders[i] = RectangleCollider();
 			index = i;
+			break;
 		}
 	}
 
@@ -260,10 +276,10 @@ void Tungine::World::clearCollider(GameObject* obj)
 	{
 		for (int i = index; i < activeColliderComponents-1; i++)
 		{
-			colliders[i] = colliders[i + 1];
+			//Tungine::World::colliders[i] = colliders[i + 1];
 		}
 
-		activeColliderComponents--;
+		//activeColliderComponents--;
 	}
 
 }
@@ -277,7 +293,9 @@ void Tungine::World::clearColorChanger(GameObject* obj)
 	{
 		if (&colorChangers[i] == colorChanger)
 		{
+			colorChangers[i] = ColliderColorChange();
 			index = i;
+			break;
 		}
 	}
 
@@ -285,10 +303,10 @@ void Tungine::World::clearColorChanger(GameObject* obj)
 	{
 		for (int i = index; i < activeColorComponents-1; i++)
 		{
-			colorChangers[i] = colorChangers[i + 1];
+			//Tungine::World::colorChangers[i] = colorChangers[i + 1];
 		}
 
-		activeColorComponents--;
+		//activeColorComponents--;
 	}
 
 }
@@ -302,7 +320,9 @@ void Tungine::World::clearController(GameObject* obj)
 	{
 		if (&players[i] == player)
 		{
+			players[i] = PlayerController();
 			index = i;
+			break;
 		}
 	}
 
@@ -310,10 +330,10 @@ void Tungine::World::clearController(GameObject* obj)
 	{
 		for (int i = index; i < activeControllerComponents-1; i++)
 		{
-			players[i] = players[i + 1];
+			//Tungine::World::players[i] = players[i + 1];
 		}
 
-		activeControllerComponents--;
+		//activeControllerComponents--;
 	}
 }
 
