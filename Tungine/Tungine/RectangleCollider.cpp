@@ -48,15 +48,15 @@ bool RectangleCollider::containsPoint(Transform t)
 void RectangleCollider::setHeight(int value)
 {
 	height = value;
-	bottomRight = Transform(transform.getX() + width, transform.getY() + height, 0);
+	bottomRight = Transform(transform.getX() + height, transform.getY() + width, 0);
 	bottomLeft = Transform(transform.getX(), transform.getY() + height, 0);
 }
 
 void RectangleCollider::setWidth(int value)
 {
 	width = value;
-	bottomRight = Transform(transform.getX() + width, transform.getY() + height, 0);
-	topRight = Transform(transform.getX() + width, transform.getY(), 0);
+	bottomRight = Transform(transform.getX() + height, transform.getY() + width, 0);
+	topRight = Transform(transform.getX() + height, transform.getY(), 0);
 }
 
 /*

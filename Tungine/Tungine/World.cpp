@@ -193,7 +193,6 @@ void Tungine::World::clearRenderer(GameObject* obj)
 		{
 			renderers[i] = renderers[i + 1];
 		}
-
 		activeRendererComponents--;
 	}
 	
